@@ -223,6 +223,7 @@ body{
     width: 100%;
     animation: bounce 1s;
     animation-iteration-count: 1;
+    background-color: #000;
     /* background: linear-gradient(348.8deg, #12056A 2.44%, #09092E 14.03%, #000617 30.32%, rgba(0, 6, 23, 0) 32.63%), linear-gradient(163.5deg, #12056A 1.15%, #09092E 18.57%, #000617 34.61%); */
 }
 
@@ -236,7 +237,8 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(348.8deg, #12056A 2.44%, #09092E 14.03%, #000617 30.32%, rgba(0, 6, 23, 0) 32.63%), linear-gradient(163.5deg, #12056A 1.15%, #09092E 18.57%, #000617 34.61%);
+    background: #000;
+    /* background: linear-gradient(348.8deg, #12056A 2.44%, #09092E 14.03%, #000617 30.32%, rgba(0, 6, 23, 0) 32.63%), linear-gradient(163.5deg, #12056A 1.15%, #09092E 18.57%, #000617 34.61%); */
 }
 
 .header .navbar .left-side-menu {
@@ -309,11 +311,12 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background: url(../images/hero.html\ bg.png);
+    background-color: #000;
+    /* background: url(../images/hero.html\ bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .hero-section .left {
