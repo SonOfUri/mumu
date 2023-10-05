@@ -92,10 +92,10 @@
                             and demand.
                         </p>
                     </div>
-                    <div class="right">
+                    <!-- <div class="right">
                         <img class="rotate" src="assets/images/bg.png" alt="logo">
                         <img class="e1 inerr" id="ani1" src="default/logo.png" alt="logo">
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="whitepaper" id="docs">
@@ -110,535 +110,814 @@
             </section>
 
 
+            <style>
+                @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+                .team,
+                .userProfile {
+                    display: flex;
+                }
+
+                :root {
+                    --userthumb: 75px;
+                    --arrowSize: 15px;
+                }
+
+                .vcenter {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    /* min-height: 100vh; */
+                }
+
+                @media (min-width: 768px) {
+                    .container {
+                        max-width: 768px;
+                        margin: 0 auto;
+                    }
+                }
+
+                .section {
+                    padding: 50px;
+                    width: 100%;
+                    height: 100%;
+                    /* height: 100vh; */
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                /* .section:before,
+                .section:after {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0px;
+                    z-index: -1;
+                    content: " ";
+                    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+                    background-color: white;
+                    opacity: 0.3;
+                    width: 400px;
+                    height: 450px;
+                    display: inline-block;
+                    transform: rotate(-180deg);
+                } */
+
+                .section:before {
+                    transform: translateX(50%) translateY(30%) rotate(-60deg);
+                    opacity: 0.2;
+                }
+
+                .section:after {
+                    opacity: 0.1;
+                    transform: translateX(30%) translateY(20%) rotate(-45deg);
+                }
+
+                .section-header {
+                    padding: 15px 0;
+                    text-align: center;
+                }
+
+                .section-header * {
+                    color: white;
+                    text-align: center;
+                }
+
+                .section-title {
+                    margin: 0px;
+                    text-align: center;
+                    color: white;
+                    font-size: 35px;
+                    position: relative;
+                    padding-bottom: 10px;
+                    display: inline-block;
+                    margin: 0 auto;
+                }
+
+                .section-title:after {
+                    bottom: 0;
+                    position: absolute;
+                    content: " ";
+                    width: 100%;
+                    height: 2px;
+                    background-color: #fff;
+                    margin: 0 auto;
+                    left: 0;
+                    right: 0;
+                }
+
+                .userProfile {
+                    flex-wrap: wrap;
+                    align-items: center;
+                }
+
+                .userProfile__thumbnail {
+                    width: var(--userthumb, 75px);
+                    height: var(--userthumb, 75px);
+                    flex: 0 0 auto;
+                    background-color: #f1f1f1;
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                .userProfile__image {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    overflow: hidden;
+                    background-color: #f1f1f1;
+                }
+
+                .team {
+                    padding: 0px;
+                    list-style: none;
+                    flex-wrap: wrap;
+                }
+
+                @media (max-width: 480px) {
+                    .team {
+                        justify-content: center;
+                    }
+                }
+
+                .team__members {
+                    position: relative;
+                    padding: 1rem;
+                    display: none;
+                    margin-bottom: calc(var(--userthumb) + var(--arrowSize)*2);
+                    box-sizing: border-box;
+                    flex: 0 0 100%;
+                    filter: grayscale(1);
+                }
+
+                @media (min-width: 480px) {
+                    .team__members {
+                        padding: 1rem;
+                        display: inline-block;
+                        flex: 0 0 20%;
+                        margin: 0px;
+                    }
+                }
+
+                .team__members:nth-child(9n+6),
+                .team__members:nth-child(9n+7),
+                .team__members:nth-child(9n+8),
+                .team__members:nth-child(9n+9) {
+                    left: auto;
+                }
+
+                @media (min-width: 480px) {
+
+                    .team__members:nth-child(9n+6),
+                    .team__members:nth-child(9n+7),
+                    .team__members:nth-child(9n+8),
+                    .team__members:nth-child(9n+9) {
+                        left: 10%;
+                    }
+                }
+
+                .team__members:nth-child(9n+9) {
+                    margin: 0px;
+                }
+
+                @media (min-width: 480px) {
+                    .team__members:nth-child(9n+9) {
+                        margin-right: 10%;
+                    }
+                }
+
+                .team__members .userProfile {
+                    justify-content: center;
+                    position: absolute;
+                    top: calc(100% + var(--arrowSize));
+                    margin: 0 auto;
+                    left: 0;
+                    right: 0;
+                }
+
+                @media (min-width: 480px) {
+                    .team__members .userProfile {
+                        position: static;
+                    }
+                }
+
+                .team__members .userProfile__thumbnail {
+                    position: relative;
+                }
+
+                .team__members .userProfile__thumbnail:after {
+                    content: " ";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: var(--userthumb, 50px);
+                    height: var(--userthumb, 50px);
+                    transform: translate(-50%, -50%) scale(0);
+                    background: linear-gradient(90deg, #fff, #f19066);
+                    background-size: 400% 400%;
+                    border-radius: 50%;
+                    z-index: -1;
+                    transition: all 0.3s linear;
+                }
+
+                .team__members:hover,
+                .team__members.team__members--show {
+                    filter: grayscale(0);
+                    display: inline-block;
+                }
+
+                @media (min-width: 480px) {
+
+                    .team__members:hover .team__details,
+                    .team__members.team__members--show .team__details {
+                        transform: translateX(-50%) scale(1, 1);
+                    }
+                }
+
+                .team__members:hover .userProfile__thumbnail:after,
+                .team__members.team__members--show .userProfile__thumbnail:after {
+                    transform: translate(-50%, -50%) scale(1.2);
+                    animation: rainbow-border 1.5s linear infinite;
+                }
+
+                @media (max-width: 480px) {
+                    .team__members:hover:not(.team__members--show) {
+                        display: none !important;
+                    }
+                }
+
+                .team__details {
+                    margin: 0 auto;
+                    position: relative;
+                    transform: translateX(0%) scale(1, 1);
+                    background: white;
+                    border: 1px solid #ccc;
+                    padding: 20px;
+                    width: 300px;
+                    text-align: center;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                    border-radius: 4px;
+                    transform-origin: center bottom;
+                    transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+                }
+
+                @media (min-width: 480px) {
+                    .team__details {
+                        position: absolute;
+                        bottom: calc(100% + 15px);
+                        left: 50%;
+                        transform: translateX(-50%) scale(0, 0);
+                    }
+                }
+
+                .team__details:after {
+                    width: var(--arrowSize);
+                    height: var(--arrowSize);
+                    position: absolute;
+                    top: calc(100% - var(--arrowSize)/2);
+                    background-color: #fff;
+                    content: " ";
+                    transform: rotate(45deg);
+                    left: calc(50% - var(--arrowSize)/2);
+                    border-bottom: 1px solid #ccc;
+                    border-right: 1px solid #ccc;
+                    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+                }
+
+                .team__details__summery {
+                    border-top: 1px dashed #ccc;
+                    padding-top: 15px;
+                    font-size: 15px;
+                    color: #aeaeae;
+                }
+
+                .team__meta {
+                    padding-bottom: 15px;
+                }
+
+                .team__meta__title {
+                    margin: 0px;
+                    color: #000;
+                }
+
+                .team__meta__designation {
+                    margin-top: 10px;
+                    color: #000;
+                }
+
+                @keyframes rainbow-border {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+
+                    50% {
+                        background-position: 100% 50%;
+                    }
+
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+            </style>
+
+            <div class="vcenter">
+                <section class="section">
+                    <div class="container">
+                        <header class="section-header">
+                            <h1 class="section-title">Highly Rated</h1>
+                            <!-- <p>Responsive Team modules using jquery and CSS only</p> -->
+                        </header>
+                        <ul class="team">
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/men/28.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Javier Bates</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Stacey Cooper</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/women/84.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Celina Ross</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Bradley Pierce</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/women/73.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Heidi Carpenter</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Jeremy Weaver</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Jeanette Harvey</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/men/27.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Gary Bryant</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/women/71.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Sherry Richardson</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Hugh Brooks</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/women/96.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Irene Ward</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/men/61.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Edgar Dunn</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery"> 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Shawn Fernandez</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery"> 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                            <li class="team__members">
+                                <div class="userProfile">
+                                    <figure class="userProfile__thumbnail">
+                                        <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Photo"
+                                            class="userProfile__image">
+                                    </figure>
+
+
+                                </div>
+                                <div class="team__details">
+                                    <header class="team__meta">
+                                        <h3 class="team__meta__title">Micheal Snyder</h3>
+                                        <div class="team__meta__designation">Software Developer</div>
+                                    </header>
+                                    <!-- <div class="team__details__summery"> 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
+            </div> -->
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
         <style>
-            @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-.team, .userProfile {
-  display: flex;
-}
 
-:root {
-  --userthumb: 75px;
-  --arrowSize: 15px;
-}
+            ul {
+                --col-gap: 2rem;
+                --row-gap: 2rem;
+                --line-w: 0.25rem;
+                display: grid;
+                grid-template-columns: var(--line-w) 1fr;
+                grid-auto-columns: max-content;
+                column-gap: var(--col-gap);
+                list-style: none;
+                width: min(60rem, 90%);
+                margin-inline: auto;
+            }
 
-.vcenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
+            /* line */
+            ul::before {
+                content: "";
+                grid-column: 1;
+                grid-row: 1 / span 20;
+                background: rgb(225, 225, 225);
+                border-radius: calc(var(--line-w) / 2);
+            }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    margin: 0 auto;
-  }
-}
+            /* columns*/
 
-.section {
-  padding: 50px;
-  width: 100%;
-  height: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-.section:before, .section:after {
-  position: absolute;
-  bottom: 0;
-  right: 0px;
-  z-index: -1;
-  content: " ";
-  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-  background-color: white;
-  opacity: 0.3;
-  width: 400px;
-  height: 450px;
-  display: inline-block;
-  transform: rotate(-180deg);
-}
-.section:before {
-  transform: translateX(50%) translateY(30%) rotate(-60deg);
-  opacity: 0.2;
-}
-.section:after {
-  opacity: 0.1;
-  transform: translateX(30%) translateY(20%) rotate(-45deg);
-}
-.section-header {
-  padding: 15px 0;
-  text-align: center;
-}
-.section-header * {
-  color: white;
-  text-align: center;
-}
-.section-title {
-  margin: 0px;
-  text-align: center;
-  color: white;
-  font-size: 35px;
-  position: relative;
-  padding-bottom: 10px;
-  display: inline-block;
-  margin: 0 auto;
-}
-.section-title:after {
-  bottom: 0;
-  position: absolute;
-  content: " ";
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-}
+            /* row gaps */
+            ul li:not(:last-child) {
+                margin-bottom: var(--row-gap);
+            }
 
-.userProfile {
-  flex-wrap: wrap;
-  align-items: center;
-}
-.userProfile__thumbnail {
-  width: var(--userthumb, 75px);
-  height: var(--userthumb, 75px);
-  flex: 0 0 auto;
-  background-color: #f1f1f1;
-  margin: 0px;
-  padding: 0px;
-}
-.userProfile__image {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  overflow: hidden;
-  background-color: #f1f1f1;
-}
+            /* card */
+            ul li {
+                grid-column: 2;
+                --inlineP: 1.5rem;
+                margin-inline: var(--inlineP);
+                grid-row: span 2;
+                display: grid;
+                grid-template-rows: min-content min-content min-content;
+            }
 
-.team {
-  padding: 0px;
-  list-style: none;
-  flex-wrap: wrap;
-}
-@media (max-width: 480px) {
-  .team {
-    justify-content: center;
-  }
-}
-.team__members {
-  position: relative;
-  padding: 1rem;
-  display: none;
-  margin-bottom: calc(var(--userthumb) + var(--arrowSize)*2 );
-  box-sizing: border-box;
-  flex: 0 0 100%;
-  filter: grayscale(1);
-}
-@media (min-width: 480px) {
-  .team__members {
-    padding: 1rem;
-    display: inline-block;
-    flex: 0 0 20%;
-    margin: 0px;
-  }
-}
-.team__members:nth-child(9n+6), .team__members:nth-child(9n+7), .team__members:nth-child(9n+8), .team__members:nth-child(9n+9) {
-  left: auto;
-}
-@media (min-width: 480px) {
-  .team__members:nth-child(9n+6), .team__members:nth-child(9n+7), .team__members:nth-child(9n+8), .team__members:nth-child(9n+9) {
-    left: 10%;
-  }
-}
-.team__members:nth-child(9n+9) {
-  margin: 0px;
-}
-@media (min-width: 480px) {
-  .team__members:nth-child(9n+9) {
-    margin-right: 10%;
-  }
-}
-.team__members .userProfile {
-  justify-content: center;
-  position: absolute;
-  top: calc(100% + var(--arrowSize));
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-}
-@media (min-width: 480px) {
-  .team__members .userProfile {
-    position: static;
-  }
-}
-.team__members .userProfile__thumbnail {
-  position: relative;
-}
-.team__members .userProfile__thumbnail:after {
-  content: " ";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: var(--userthumb, 50px);
-  height: var(--userthumb, 50px);
-  transform: translate(-50%, -50%) scale(0);
-  background: linear-gradient(90deg, #fff, #f19066);
-  background-size: 400% 400%;
-  border-radius: 50%;
-  z-index: -1;
-  transition: all 0.3s linear;
-}
-.team__members:hover, .team__members.team__members--show {
-  filter: grayscale(0);
-  display: inline-block;
-}
-@media (min-width: 480px) {
-  .team__members:hover .team__details, .team__members.team__members--show .team__details {
-    transform: translateX(-50%) scale(1, 1);
-  }
-}
-.team__members:hover .userProfile__thumbnail:after, .team__members.team__members--show .userProfile__thumbnail:after {
-  transform: translate(-50%, -50%) scale(1.2);
-  animation: rainbow-border 1.5s linear infinite;
-}
-@media (max-width: 480px) {
-  .team__members:hover:not(.team__members--show) {
-    display: none !important;
-  }
-}
-.team__details {
-  margin: 0 auto;
-  position: relative;
-  transform: translateX(0%) scale(1, 1);
-  background: white;
-  border: 1px solid #ccc;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  transform-origin: center bottom;
-  transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-}
-@media (min-width: 480px) {
-  .team__details {
-    position: absolute;
-    bottom: calc(100% + 15px);
-    left: 50%;
-    transform: translateX(-50%) scale(0, 0);
-  }
-}
-.team__details:after {
-  width: var(--arrowSize);
-  height: var(--arrowSize);
-  position: absolute;
-  top: calc(100% - var(--arrowSize)/2);
-  background-color: #fff;
-  content: " ";
-  transform: rotate(45deg);
-  left: calc(50% - var(--arrowSize)/2);
-  border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-}
-.team__details__summery {
-  border-top: 1px dashed #ccc;
-  padding-top: 15px;
-  font-size: 15px;
-  color: #aeaeae;
-}
-.team__meta {
-  padding-bottom: 15px;
-}
-.team__meta__title {
-  margin: 0px;
-  color: #000;
-}
-.team__meta__designation {
-  margin-top: 10px;
-  color: #000;
-}
+            /* date */
+            ul li .date {
+                --dateH: 3rem;
+                height: var(--dateH);
+                margin-inline: calc(var(--inlineP) * -1);
 
-@keyframes rainbow-border {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+                text-align: center;
+                background-color: var(--accent-color);
+
+                color: white;
+                font-size: 1.25rem;
+                font-weight: 700;
+
+                display: grid;
+                place-content: center;
+                position: relative;
+
+                border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+            }
+
+            /* date flap */
+            ul li .date::before {
+                content: "";
+                width: var(--inlineP);
+                aspect-ratio: 1;
+                background: var(--accent-color);
+                background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+                position: absolute;
+                top: 100%;
+
+                clip-path: polygon(0 0, 100% 0, 0 100%);
+                right: 0;
+            }
+
+            /* circle */
+            ul li .date::after {
+                content: "";
+                position: absolute;
+                width: 2rem;
+                aspect-ratio: 1;
+                background: var(--bgColor);
+                border: 0.3rem solid var(--accent-color);
+                border-radius: 50%;
+                top: 50%;
+
+                transform: translate(50%, -50%);
+                right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+            }
+
+            /* title descr */
+            ul li .title,
+            ul li .descr {
+                background: var(--bgColor);
+                position: relative;
+                padding-inline: 1.5rem;
+            }
+
+            ul li .title {
+                overflow: hidden;
+                padding-block-start: 1.5rem;
+                padding-block-end: 1rem;
+                font-weight: 500;
+            }
+
+            ul li .descr {
+                padding-block-end: 1.5rem;
+                font-weight: 300;
+            }
+
+            /* shadows */
+            ul li .title::before,
+            ul li .descr::before {
+                content: "";
+                position: absolute;
+                width: 90%;
+                height: 0.5rem;
+                background: rgba(0, 0, 0, 0.5);
+                left: 50%;
+                border-radius: 50%;
+                filter: blur(4px);
+                transform: translate(-50%, 50%);
+            }
+
+            ul li .title::before {
+                bottom: calc(100% + 0.125rem);
+            }
+
+            ul li .descr::before {
+                z-index: -1;
+                bottom: 0.25rem;
+            }
+
+            @media (min-width: 40rem) {
+                ul {
+                    grid-template-columns: 1fr var(--line-w) 1fr;
+                }
+
+                ul::before {
+                    grid-column: 2;
+                }
+
+                ul li:nth-child(odd) {
+                    grid-column: 1;
+                }
+
+                ul li:nth-child(even) {
+                    grid-column: 3;
+                }
+
+                /* start second card */
+                ul li:nth-child(2) {
+                    grid-row: 2/4;
+                }
+
+                ul li:nth-child(odd) .date::before {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%);
+                    left: 0;
+                }
+
+                ul li:nth-child(odd) .date::after {
+                    transform: translate(-50%, -50%);
+                    left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+                }
+
+                ul li:nth-child(odd) .date {
+                    border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+                }
+            }
+
+            .credits {
+                margin-top: 1rem;
+                text-align: right;
+            }
+
+            .credits a {
+                color: var(--color);
+            }
         </style>
 
-<div class="vcenter">
-    <section class="section">
-      <div class="container">
-      <header class="section-header">
-        <h1 class="section-title">Highly Rated</h1>
-        <!-- <p>Responsive Team modules using jquery and CSS only</p> -->
-      </header>
-      <ul class="team">
-        <li class="team__members">
-           <div class="userProfile" >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/men/28.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Javier Bates</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile"  >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Stacey Cooper</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile"  >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/women/84.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Celina Ross</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile"  >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Bradley Pierce</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile"  >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/women/73.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Heidi Carpenter</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile" >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Jeremy Weaver</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile"  >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Jeanette Harvey</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile"  >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/men/27.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Gary Bryant</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile"  >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/women/71.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Sherry Richardson</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile" >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Hugh Brooks</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile" >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/women/96.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Irene Ward</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile" >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/men/61.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Edgar Dunn</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery"> 
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members">
-           <div class="userProfile" >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Shawn Fernandez</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery"> 
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-        <li class="team__members"> 
-           <div class="userProfile" >
-            <figure class="userProfile__thumbnail">
-              <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Photo" class="userProfile__image">
-            </figure>
-          
-    
-          </div>
-          <div class="team__details">
-              <header class="team__meta">
-                <h3 class="team__meta__title">Micheal Snyder</h3>
-                <div class="team__meta__designation">Software Developer</div>
-            </header>
-            <!-- <div class="team__details__summery"> 
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate exercitationem, consequatur dolores excepturi esse.
-            </div> -->
-          </div>
-        </li>
-      </ul>
-        </div>
-    </section>
-      </div>
-
-        </div>
+        <section>
+            <h1  style="text-align: center;">ROADMAP</h1>
+            <ul>
+                <li style="--accent-color:#41516C">
+                    <div class="date">2002</div>
+                    <div class="title">Title 1</div>
+                    <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic
+                        quibusdam fugiat est numquam harum, accusamus suscipit consequatur laboriosam!</div>
+                </li>
+                <li style="--accent-color:#FBCA3E">
+                    <div class="date">2007</div>
+                    <div class="title">Title 2</div>
+                    <div class="descr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos adipisci nobis
+                        nostrum vero nihil veniam.</div>
+                </li>
+                <li style="--accent-color:#E24A68">
+                    <div class="date">2012</div>
+                    <div class="title">Title 3</div>
+                    <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minima consequuntur
+                        soluta placeat iure totam commodi repellendus ea delectus, libero fugit quod reprehenderit,
+                        sequi quo, et dolorum saepe nulla hic.</div>
+                </li>
+                <li style="--accent-color:#1B5F8C">
+                    <div class="date">2017</div>
+                    <div class="title">Title 4</div>
+                    <div class="descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, cumque.</div>
+                </li>
+                <li style="--accent-color:#4CADAD">
+                    <div class="date">2022</div>
+                    <div class="title">Title 5</div>
+                    <div class="descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, non.</div>
+                </li>
+            </ul>
+            <div class="credits"><a target="_blank"
+                    href="https://www.freepik.com/free-vector/infographic-template-with-yearly-info_1252895.htm">inspired
+                    by</a></div>
+        </section>
 
         <div class="con">
             <footer class="footer">
